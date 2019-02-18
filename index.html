@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <ol>
+      <li v-for="(value, key) in mid1">
+        <button v-on:click="mid1TrueOrFalse(value.result, key, 'T')">T</button>
+        <button v-on:click="mid1TrueOrFalse(value.result, key, 'F')">F</button>
+        <p>{{value.description}}</p>
+        <p v-bind:style="{ color: value.activeColor}">{{value.answer}}</p>
+      </li>
+    </ol>
+    <label>--------------------------------------QUIZ--------------------------------------------</label>
+    <ol>
+      <li v-for="(value, key) in quiz">
+        <button v-on:click="quizTrueOrFalse(value.result, key, 'T')">T</button>
+        <button v-on:click="quizTrueOrFalse(value.result, key, 'F')">F</button>
+        <p>{{value.description}}</p>
+        <p v-bind:style="{ color: value.activeColor}">{{value.answer}}</p>
+      </li>
+    </ol>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        mid1: {
+          q1:{
+            description : 'Increasing the size of a cache results in lower miss rates and higher performance.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q2:{
+            description : 'For a given capacity and block size, a set-associative cache implementation will typically have a lower hit time than a direct-mapped implementation',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q3:{
+            description : 'For a given capacity and block size, a set-associative cache implementation will typically have a lower miss penalty than a direct-mapped implementation.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q4:{
+            description : 'Memory buses are usually picked based on the speed whereas the I/O buses are primarily adopted based on the compatibility (industry standards) and cost',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q5:{
+            description : 'Asynchronous buses cannot be long due to clock skew restrictions.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q6:{
+            description : '\'Polling\' is always a better mechanism than \'interrupts\' for handling I/O operations on a network interface card',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q7:{
+            description : 'In a write-through cache, a read miss can cause a write to the lower memory level.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q8:{
+            description : 'SRAMs must be refreshed periodically to prevent loss of information.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q9:{
+            description : 'Magnetic disks are volatile storage devices.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q10:{
+            description : 'An asynchronous bus is not clocked.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q11:{
+            description : 'Victim caches decrease miss penalty while they increase miss rate.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q12:{
+            description : 'RAID 5 uses more check disks than RAID 3 for the same number of data disks.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q13:{
+            description : 'Direct-mapped cache of size N has same miss rate as 2-way set associative of size N/2.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q14:{
+            description : 'The main difference between DRAM (the technology used to implement main memory) and SRAM (the technology used to implement caches) is that DRAM is optimized for access speed while SRAM is optimized for density',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q15:{
+            description : 'If the I/O devices are connected to the CPU through main memory busses, the performance of the processor may decrease since I/O commands could interfere with CPU memory accesses.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q16:{
+            description : 'Increasing the size of a cache results in lower miss rates and higher performance. ',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q17:{
+            description : 'For a given capacity and block size, a set-associative cache implementation will typically have a lower hit time than a direct-mapped implementation.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q18:{
+            description : 'For a given capacity and block size, a set-associative cache implementation will typically have a lower miss penalty than a direct-mapped implementation.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q19:{
+            description : 'Memory buses are usually picked based on the speed whereas the I/O buses are primarily adopted based on the compatibility (industry standards) and cost.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q20:{
+            description : 'Asynchronous buses cannot be long due to clock skew restrictions.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q21:{
+            description : '\'Polling\' is always a better mechanism than \'interrupts\' for handling I/O operations on a network interface card.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q22:{
+            description : 'In a write-through cache, a read miss can cause a write to the lower memory level.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q23:{
+            description : 'RAID 5 can recover from a two-disk failure ',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q24:{
+            description : 'ATM has a variable message size and Ethernet has a fixed message size',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q25:{
+            description : 'Loop-carried dependencies can be completely eliminated by a hardware mechanism at run-time.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q26:{
+            description : 'The multi-cycle data path is always faster than the single-cycle data path.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q27:{
+            description : 'Loops with intra-iteration dependencies can be executed in parallel.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q28:{
+            description : 'Software Pipelining can be used on superscalar processors.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q29:{
+            description : 'It is possible to eliminate all the stalls due to data dependencies with a special hardware mechanism.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q30:{
+            description : 'Conflict misses do not occur in fully set-associative cache memories.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q31:{
+            description : 'For a given capacity and block size, a set-associative cache implementation will typically have a higher hit time than a direct-mapped implementation.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q32:{
+            description : 'Page tables in virtual memory systems are placed on a special cache memory',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q33:{
+            description : 'Y is p\% faster than X\" can be defined as: time of Y / time of X = 1 + p/100',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q34:{
+            description : 'Virtually addressable caches would have less hit time than physically addressable cache memories',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q35:{
+            description : 'TLB misses in a virtual memory system can occur and can be handled by software',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q36:{
+            description : 'In a write-back cache, a read miss always causes a write to the lower memory level.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q37:{
+            description : 'Branch history tables typically eliminate more stall cycles than branch target buffers.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q38:{
+            description : 'Both DRAM and SRAM must be refreshed periodically using a dummy read/write operation.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q39:{
+            description : 'Memory interleaving is a technique for reducing memory access time through increased bandwidth utilization of the data bus',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q40:{
+            description : 'Control dependencies can be completely eliminated with a special hardware mechanism',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q41:{
+            description : 'Compulsory misses do not occur in fully-set associative cache memories',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q42:{
+            description : 'In a Write-Throug cache, a read miss always cause a write to the lower memory level',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q43:{
+            description : 'DRAMs must be refreshed periodically using a dummy read/write operation.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q44:{
+            description : 'Page Tables in Virtual Memory system are placed on a special cache memory.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q45:{
+            description : 'RISC architectures are suitable for portable electronic devices.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+        },
+        quiz: {
+          q1:{
+            description : 'performance is indirectly proportional to the system clock frequency.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q2:{
+            description : 'CISC architectures are more suitable for portable electronic devices than RISC.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q3:{
+            description : 'Processors with faster clock rates will always be faster.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q4:{
+            description : 'Name dependencies can be completely eliminated by a hardware mechanism at run-time',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q5:{
+            description : 'Loops with no inter-iteration (loop-carried) dependencies can be executed in parallel.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q6:{
+            description : 'Data forwarding can resolve all data hazards',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q7:{
+            description : 'Pipelining increases overall instruction throughput but also increases individual instruction latency',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q8:{
+            description : 'RAID 5 can recover from a two-disk failure.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q9:{
+            description : 'Data dependencies can always be avoided by a bypass logic.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q10:{
+            description : 'ADD instruction requires data memory access.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q11:{
+            description : 'If there are 5 stages in a pipeline, then 5 is the maximum possible speedup.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q12:{
+            description : 'RAW hazard is a control hazard.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q13:{
+            description : 'Magnetic disks are volatile storage devices.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q14:{
+            description : 'As compared to a single-cycled datapath, a pipelined datapath has lower latency and higher throughput.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q15:{
+            description : 'High associativity in a cache reduces compulsory misses.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q16:{
+            description : 'For a given capacity and block size, a set-associative cache implementation will typically have a lower hit time than a direct-mapped implementation.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q17:{
+            description : 'In a Write-Through cache, a read miss always causes a write to the lower memory level.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q18:{
+            description : 'RAID systems can have catastrophic failures.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q19:{
+            description : 'High associativity in a cache reduces compulsory misses.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q20:{
+            description : 'For a given capacity and block size, a set-associative cache implementation will typically have a lower hit time than a direct-mapped implementation.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q21:{
+            description : ' SRAMs are optimized for storage density.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q22:{
+            description : 'TLBs are placed on a special cache memory.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+        },
+      },
+      methods: {
+        mid1TrueOrFalse: function (result, key, choose) {
+          console.log(result + ' <--> ' + choose)
+          if (result === choose) {
+            this.mid1[key].answer = 'correct'
+            this.mid1[key].activeColor = 'green'
+          } else {
+            this.mid1[key].answer = 'incorrect'
+            this.mid1[key].activeColor = 'red'
+          }
+        },
+        quizTrueOrFalse: function (result, key, choose) {
+          console.log(result + ' <--> ' + choose)
+          if (result === choose) {
+            this.quiz[key].answer = 'correct'
+            this.quiz[key].activeColor = 'green'
+          } else {
+            this.quiz[key].answer = 'incorrect'
+            this.quiz[key].activeColor = 'red'
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html> 
