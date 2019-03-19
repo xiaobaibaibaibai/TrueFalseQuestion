@@ -6,6 +6,29 @@
 </head>
 <body>
   <div id="app">
+    <label>--------------------------------------MID2--------------------------------------------</label>
+    <ol>
+      <li v-for="(value, key) in mid2">
+        <button v-on:click="mid2TrueOrFalse(value.result, key, 'T')">T</button>
+        <button v-on:click="mid2TrueOrFalse(value.result, key, 'F')">F</button>
+        <p>{{value.description}}</p>
+        <p v-bind:style="{ color: value.activeColor}">{{value.answer}}</p>
+      </li>
+    </ol>
+    <label>--------------------------------------MID2 Multi Choice--------------------------------------------</label>
+    <ol>
+      <li v-for="(value, key) in mid2MultiChoice">
+        <p>{{value.description}}</p>
+        <ol type="A">
+          <li v-for="(rc, content) in value.choices" style="margin-bottom: 5px;">
+            <button v-on:click="mid2Choice(rc, key, content)" v-bind:style="{ color: value.choices[content].color}">{{content}}</button>
+            <p>{{value.choices[content][1]}}</p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+    <!--
+    <label>--------------------------------------MID1--------------------------------------------</label>
     <ol>
       <li v-for="(value, key) in mid1">
         <button v-on:click="mid1TrueOrFalse(value.result, key, 'T')">T</button>
@@ -23,11 +46,248 @@
         <p v-bind:style="{ color: value.activeColor}">{{value.answer}}</p>
       </li>
     </ol>
+    -->
   </div>
   <script>
     var app = new Vue({
       el: '#app',
       data: {
+        mid2MultiChoice: {
+          q1:{
+            description : 'Which of the following statements are generally true?',
+            choices: {
+              'Memory hierarchies take advantage of temporal locality': {
+                result: 'F',
+                color: 'black'
+              },
+              'On a read, the value returned depends on which blocks are in the cache.': {
+                result: 'F',
+                color: 'black'
+              },
+              'Most of the cost of the memory hierarchy is at the highest level.': {
+                result: 'F',
+                color: 'black'
+              },
+              'Most of the cost of the memory hierarchy is at the lowest level.': {
+                result: 'T',
+                color: 'black'
+              },
+            },
+          },
+          q2:{
+            description : '64KB cache with 16-byte block size and a 32-bit address. What type of a cache would require 16 bits for Tag information?',
+            choices: {
+              'Fully associative cache': {
+                result: 'F',
+                color: 'black'
+              },
+              'Directed-mapped cache': {
+                result: 'T',
+                color: 'black'
+              },
+              ' 2-way associative cache': {
+                result: 'F',
+                color: 'black'
+              },
+              '4-way associative cache': {
+                result: 'F',
+                color: 'black'
+              },
+            },
+          },
+          q3:{
+            description : '64KB cache with four-word block size (a word is 4 bytes) and a 32-bit address. If a block has 28 tag bits, what is the type of this cache?',
+            choices: {
+              '2-way set associative': {
+                result: 'F',
+                color: 'black'
+              },
+              'Direct mapped': {
+                result: 'F',
+                color: 'black'
+              },
+              'Fully associative': {
+                result: 'T',
+                color: 'black'
+              },
+              '4-way set associative': {
+                result: 'F',
+                color: 'black'
+              },
+            },
+          },
+          q4:{
+            description : 'Which one of the following processors has the highest possible MIPS rate, assuming full compiler optimization and no cache misses?',
+            choices: {
+              'A 4-issue processor driven by a 300 MHz clock.': {
+                result: 'F',
+                color: 'black'
+              },
+              'A single-issue processor driven by a 1.2 GHz clock': {
+                result: 'F',
+                color: 'black'
+              },
+              'A 2-issue processor with a 600 MHz clock.': {
+                result: 'F',
+                color: 'black'
+              },
+              'A 8-issue VLIW processor driven by a 200 MHz clock.': {
+                result: 'T',
+                color: 'black'
+              },
+            },
+          },
+          q5:{
+            description : 'GPU hardware handles: ',
+            choices: {
+              'thread management': {
+                result: 'T',
+                color: 'black'
+              },
+              'OS': {
+                result: 'F',
+                color: 'black'
+              },
+              'applications': {
+                result: 'F',
+                color: 'black'
+              },
+              'none': {
+                result: 'F',
+                color: 'black'
+              },
+            },
+          },
+          q6:{
+            description : 'Which of the following statement is NOT true on the Centralized Shared-Memory Architectures?',
+            choices: {
+              'The use of large multilevel caches can substantially reduce memory bandwidth demands of a processor.': {
+                result: 'F',
+                color: 'black'
+              },
+              'Bandwidth of the centralized memory system grows as the number of processors in machines increases.': {
+                result: 'T',
+                color: 'black'
+              },
+              'It is possible for several (micro)processors to share the same memory through a shared bus.': {
+                result: 'F',
+                color: 'black'
+              },
+            },
+          },
+          q7:{
+            description : 'Symmetric multiprocessors architectures, are sometimes known as:',
+            choices: {
+              'Variable memory access': {
+                result: 'F',
+                color: 'black'
+              },
+              'Static memory access': {
+                result: 'F',
+                color: 'black'
+              },
+              'Uniform memory access': {
+                result: 'T',
+                color: 'black'
+              },
+            },
+          },
+          q8:{
+            description : 'Which of the following systems is the least scalable with respect to its number of processors?',
+            choices: {
+              'Cache-coherent NUMA systems': {
+                result: 'F',
+                color: 'black'
+              },
+              'None': {
+                result: 'F',
+                color: 'black'
+              },
+              'Symmetric multiprocessors': {
+                result: 'T',
+                color: 'black'
+              },
+              'Noncache-coherent NUMA systems': {
+                result: 'F',
+                color: 'black'
+              },
+            },
+          },
+        },
+        mid2: {
+          q1:{
+            description : 'High associativity in a cache reduces compulsory misses',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q2:{
+            description : 'For a given capacity and block size, a set-associative cache implementation will typically have a lower hit time than a direct-mapped implementation.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q3:{
+            description : 'SRAMs are optimized for storage density.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q4:{
+            description : 'TLBs are placed on a special cache memory.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q5:{
+            description : 'SIMD architectures exploits instruction-level parallelism.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q6:{
+            description : 'Processors with lower CPIs will always be faster.',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q7:{
+            description : 'Parallelism at data level means parallel execution of multiple instructions of the same type.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q8:{
+            description : 'Designating a preferred thread sacrifices throughput.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q9:{
+            description : 'Amdahl’s Law doesn’t apply to parallel computers',
+            result: 'F',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q10:{
+            description : 'Data-level parallelism achieved by performing the same operation on independent data',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q11:{
+            description : 'A Shared Address Space programming model can be used on large scale multiprocessors.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+          q10:{
+            description : 'Clusters have separate memories and thus need many copies of the operating system.',
+            result: 'T',
+            answer: 'unknown',
+            activeColor: 'black',
+          },
+        },
         mid1: {
           q1:{
             description : 'Increasing the size of a cache results in lower miss rates and higher performance.',
@@ -455,7 +715,26 @@
             this.quiz[key].answer = 'incorrect'
             this.quiz[key].activeColor = 'red'
           }
-        }
+        },
+        mid2TrueOrFalse: function (result, key, choose) {
+          console.log(result + ' <--> ' + choose)
+          if (result === choose) {
+            this.mid2[key].answer = 'correct'
+            this.mid2[key].activeColor = 'green'
+          } else {
+            this.mid2[key].answer = 'incorrect'
+            this.mid2[key].activeColor = 'red'
+          }
+        },
+        mid2Choice: function (rc, key, content) {
+          if (rc.result === 'T') {
+            this.mid2MultiChoice[key].choices[content].color = 'green'
+            console.log(content + ' <--> ' + ' '+ ' <--> ' + this.mid2MultiChoice[key].choices[content].color)
+          } else {
+            this.mid2MultiChoice[key].choices[content].color = 'red'
+            console.log(content + ' <--> ' + ' ' + ' <--> ' + this.mid2MultiChoice[key].choices[content].color)
+          }
+        },
       }
     })
   </script>
