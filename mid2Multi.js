@@ -201,4 +201,378 @@ var mid2MultiQuestion = {
         },
       },
     },
+    q11:{
+        description : 'Which of the following statements is false?',
+        choices: {
+          'A scalar processor processes one data item at a time.': {
+            result: 'F',
+            color: 'black'
+          },
+          'Superscalar architectures with speculative executions are suitable for embedded processors': {
+            result: 'T',
+            color: 'black'
+          },
+          'In a vector processor, a single instruction operates simultaneously on multiple data items.': {
+            result: 'F',
+            color: 'black'
+          },
+          'VLIW architectures execute instructions in parallel based on a fixed schedule determined when the code is compiled.': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q12:{
+        description : 'Dependencies between iterations of a loop are called',
+        choices: {
+          'Loop-control	dependences': {
+            result: 'F',
+            color: 'black'
+          },
+          'Control dependences': {
+            result: 'F',
+            color: 'black'
+          },
+          'Loop-carried dependences': {
+            result: 'T',
+            color: 'black'
+          },
+          'Anti-dependences': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q13:{
+        description : 'Goal of software and hardware techniques, is to exploit',
+        choices: {
+          'Compatibility': {
+            result: 'F',
+            color: 'black'
+          },
+          'Parallelism': {
+            result: 'T',
+            color: 'black'
+          },
+          'Scalability': {
+            result: 'F',
+            color: 'black'
+          },
+          'Supervision': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q14:{
+        description : 'To be gathered in a single register, distance separating elements are called',
+        choices: {
+          'Grid': {
+            result: 'F',
+            color: 'black'
+          },
+          'Stride': {
+            result: 'T',
+            color: 'black'
+          },
+          'String': {
+            result: 'F',
+            color: 'black'
+          },
+          'Warp': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q15:{
+        description : 'Unifying	theme\' of every form of parallelism in the NVIDIA systems is the',
+        choices: {
+          'NVIDIA thread': {
+            result: 'F',
+            color: 'black'
+          },
+          'CUDA thread': {
+            result: 'T',
+            color: 'black'
+          },
+          'ETA thread': {
+            result: 'F',
+            color: 'black'
+          },
+          'CRUDE thread': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q16:{
+        description : 'Vector instructions which can be potentially executed altogether, is known as',
+        choices: {
+          'Pipelining': {
+            result: 'F',
+            color: 'black'
+          },
+          'Speculation': {
+            result: 'F',
+            color: 'black'
+          },
+          'Convoy': {
+            result: 'T',
+            color: 'black'
+          },
+          'Commit': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q17:{
+        description : 'A special hardware buffer that temporarily holds instruction results during speculative execution is known as',
+        choices: {
+          'Write-through buffer': {
+            result: 'F',
+            color: 'black'
+          },
+          'Ordered buffer': {
+            result: 'F',
+            color: 'black'
+          },
+          'Reorder buffer': {
+            result: 'T',
+            color: 'black'
+          },
+          'Control buffer': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q18:{
+        description : 'Hardware-based speculation method for executing programs is necessarily a',
+        choices: {
+          'Data flow speculation': {
+            result: 'T',
+            color: 'black'
+          },
+          'Control speculation': {
+            result: 'F',
+            color: 'black'
+          },
+          'Anti-speculation': {
+            result: 'F',
+            color: 'black'
+          },
+          'All above': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q19:{
+        description : 'GPUs can be considered as',
+        choices: {
+          'Multicores': {
+            result: 'F',
+            color: 'black'
+          },
+          'Multiprocessors': {
+            result: 'F',
+            color: 'black'
+          },
+          'Both': {
+            result: 'T',
+            color: 'black'
+          },
+        },
+      },
+      q20:{
+        description : 'Which one of the following processors has the highest possible MIPS rate, assuming full compiler optimization and no cache misses?',
+        choices: {
+          'A 8-issue VLIW processor driven by a 200 MHz clock.': {
+            result: 'T',
+            color: 'black'
+          },
+          'A single-issue processor driven by a 1.2 GHz clock.': {
+            result: 'F',
+            color: 'black'
+          },
+          'A 2-issue processor with a 600 MHz clock.': {
+            result: 'F',
+            color: 'black'
+          },
+          'A 4-issue processor driven by a 300 MHz clock.': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q21:{
+        description : 'Each bank register of fixed-length maintaining a single vector, is referred to as',
+        choices: {
+          'Vector register': {
+            result: 'T',
+            color: 'black'
+          },
+          'Bank register': {
+            result: 'F',
+            color: 'black'
+          },
+          'Accumulator': {
+            result: 'F',
+            color: 'black'
+          },
+          'Commit': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q22:{
+        description : 'CUDA groups 32 parallel CUDA threads into a',
+        choices: {
+          'Unit': {
+            result: 'F',
+            color: 'black'
+          },
+          'Warp': {
+            result: 'T',
+            color: 'black'
+          },
+          'Stream': {
+            result: 'F',
+            color: 'black'
+          },
+          'Process': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q23:{
+        description : 'A sufficient test for loop-carried dependence\'s absence in the analysis of loops is the',
+        choices: {
+          'Litmus test': {
+            result: 'F',
+            color: 'black'
+          },
+          'GCD test': {
+            result: 'T',
+            color: 'black'
+          },
+          'Warp test': {
+            result: 'F',
+            color: 'black'
+          },
+          'Flight test': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q24:{
+        description : 'A branch-prediction cache which is used to store predicted address for upcoming instruction after branch, is called a',
+        choices: {
+          'Reservation station buffer': {
+            result: 'F',
+            color: 'black'
+          },
+          'Branch-target buffer': {
+            result: 'T',
+            color: 'black'
+          },
+          'Table-Lookaside Buffer': {
+            result: 'F',
+            color: 'black'
+          },
+          'Reorder buffer': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q25:{
+        description : 'Allowing the issuance of multiple instructions in a clock cycle is a goal of',
+        choices: {
+          'Single-issue processors': {
+            result: 'F',
+            color: 'black'
+          },
+          'Vector processors': {
+            result: 'F',
+            color: 'black'
+          },
+          'Multiple-issue processors': {
+            result: 'T',
+            color: 'black'
+          },
+          'VLIW processors': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q26:{
+        description : 'Which architecture is the least efficient in exploiting data level parallelism?',
+        choices: {
+          'VLIW': {
+            result: 'F',
+            color: 'black'
+          },
+          'SIMD': {
+            result: 'F',
+            color: 'black'
+          },
+          'Superscalar': {
+            result: 'T',
+            color: 'black'
+          },
+          'GPU': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q27:{
+        description : 'Which of the following statements is false regarding GPU threads and blocks?',
+        choices: {
+          'Threads are organized into blocks.': {
+            result: 'F',
+            color: 'black'
+          },
+          'Thread management is handled by OS.': {
+            result: 'T',
+            color: 'black'
+          },
+          'Blocks are organized into a grid': {
+            result: 'F',
+            color: 'black'
+          },
+          'A thread is associated with each data element.': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q28:{
+        description : 'GPUs use _____ model',
+        choices: {
+          'SISD': {
+            result: 'F',
+            color: 'black'
+          },
+          'SPMD': {
+            result: 'F',
+            color: 'black'
+          },
+          'SIMT': {
+            result: 'T',
+            color: 'black'
+          },
+          'MIMD': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
   }
