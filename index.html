@@ -21,10 +21,9 @@
         <p style="font-size: 22px;">{{value.description}}</p>
         <ol type="A">
           <li v-for="(rc, content) in value.choices" style="margin-bottom: 5px;">
-            <a v-on:click="mid2Choice(rc, key, content)" v-bind:style="{ color: value.choices[content].color}" style="font-size: 22px; border-style: solid; border-width: 1px;">
-              {{content}}
-            </a>
-            <p>{{value.choices[content][1]}}</p>
+            <div v-on:click="mid2Choice(rc, key, content)" v-bind:style="{ color: value.choices[content].color}" style="font-size: 22px; border-style: solid; border-width: 1px;">
+              <a v-bind:style="{ color: value.choices[content].color}">{{content}}</a>
+            </div>
           </li>
         </ol>
       </li>
