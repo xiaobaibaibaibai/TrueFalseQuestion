@@ -575,4 +575,151 @@ var mid2MultiQuestion = {
           },
         },
       },
+      q29:{
+        description : 'Which of the following statements is false?',
+        choices: {
+          'A scalar processor can process multiple data items at a time.': {
+            result: 'T',
+            color: 'black'
+          },
+          'VLIW can exploit both instruction and data level parallelisms': {
+            result: 'F',
+            color: 'black'
+          },
+          'In a vector processor, a single instruction operates simultaneously on multiple data items.': {
+            result: 'T',
+            color: 'black'
+          },
+          'VLIW architectures execute instructions in parallel based on a fixed schedule determined code is compiled.': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q30:{
+        description : 'Which of the following statement is false regarding GPU threads and blocks?',
+        choices: {
+          'Threads are organized into blocks': {
+            result: 'F',
+            color: 'black'
+          },
+          'Thread management is handled by OS': {
+            result: 'T',
+            color: 'black'
+          },
+          'Blocks are organized into a grid': {
+            result: 'F',
+            color: 'black'
+          },
+          'A thread is associated with each data element': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q31:{
+        description : 'Vector instruction which can be potentially executed altogether, is known as',
+        choices: {
+          'Pipelining': {
+            result: 'F',
+            color: 'black'
+          },
+          'Speculation': {
+            result: 'F',
+            color: 'black'
+          },
+          'Convoy': {
+            result: 'T',
+            color: 'black'
+          },
+          'Commit': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q32:{
+        description : 'Dependences between iterations of a loop are called',
+        choices: {
+          'Loop-control dependences': {
+            result: 'F',
+            color: 'black'
+          },
+          'Control dependences': {
+            result: 'F',
+            color: 'black'
+          },
+          'Loop-carried dependences': {
+            result: 'T',
+            color: 'black'
+          },
+          'Anti-dependences': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q33:{
+        description : 'CUDA groups 32 parallele threads into a',
+        choices: {
+          'Unit': {
+            result: 'F',
+            color: 'black'
+          },
+          'Warp': {
+            result: 'T',
+            color: 'black'
+          },
+          'Convoy': {
+            result: 'F',
+            color: 'black'
+          },
+          'Process': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q34:{
+        description : 'A sufficient test for loop-carried dependence’s absence in the analysis of loops is the',
+        choices: {
+          'Litmus test': {
+            result: 'F',
+            color: 'black'
+          },
+          'GCD test': {
+            result: 'T',
+            color: 'black'
+          },
+          'Warp test': {
+            result: 'F',
+            color: 'black'
+          },
+          'Flight test': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q35:{
+        description : 'A sufficient test for loop-carried dependence’s absence in the analysis of loops is the',
+        choices: {
+          'Litmus test': {
+            result: 'F',
+            color: 'black'
+          },
+          'GCD test': {
+            result: 'T',
+            color: 'black'
+          },
+          'Warp test': {
+            result: 'F',
+            color: 'black'
+          },
+          'Flight test': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
   }
