@@ -19,10 +19,10 @@
     <label>--------------------------------------MID2--------------------------------------------</label>
     <ol>
       <li v-for="(value, key) in mid2TrueFalse">
+        <p style="font-size: 22px;">{{value.description}}</p>
         <button v-on:click="mid2TrueOrFalse(value.result, key, 'T')">T</button>
         <button v-on:click="mid2TrueOrFalse(value.result, key, 'F')">F</button>
-        <p style="font-size: 22px;">{{value.description}}</p>
-        <p v-bind:style="{ color: value.activeColor}">{{value.answer}}</p>
+        <p v-bind:style="{ color: value.activeColor}" style="display: inline;">{{value.answer}}</p>
       </li>
     </ol>
     <label>--------------------------------------MID2 Multi Choice--------------------------------------------</label>
