@@ -11,7 +11,7 @@
       <li v-for="(value, key) in mid2">
         <button v-on:click="mid2TrueOrFalse(value.result, key, 'T')">T</button>
         <button v-on:click="mid2TrueOrFalse(value.result, key, 'F')">F</button>
-        <p>{{value.description}}</p>
+        <p style="font-size: 22px;">{{value.description}}</p>
         <p v-bind:style="{ color: value.activeColor}">{{value.answer}}</p>
       </li>
     </ol>
