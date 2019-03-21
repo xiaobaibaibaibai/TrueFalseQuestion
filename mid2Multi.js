@@ -722,4 +722,42 @@ var mid2MultiQuestion = {
           },
         },
       },
+      q36:{
+        description : 'For the following snippet of code, which architectural feature will sufficiently improve the performance of the code? \n ADD.D R0, R1, R4 \|\n ADD.D R2, R3, R5 \|\n ADD.D R7, R8, R6',
+        choices: {
+          'In-order execution': {
+            result: 'F',
+            color: 'black'
+          },
+          'Out-of-order execution': {
+            result: 'T',
+            color: 'black'
+          },
+          'Speculative execution': {
+            result: 'F',
+            color: 'black'
+          },
+          'Dynamic scheduling': {
+            result: 'F',
+            color: 'black'
+          },
+        },
+      },
+      q37:{
+        description : 'For the following snippet of code, which architectural feature will sufficiently improve the performance of the code?\nLoop:	ADD R3, R4, R0 \|\n LD R4, 8(R4)	# cache hit \|\n   BNEQZ R4, LOOP',
+        choices: {
+          'Out-of-order execution': {
+            result: 'F',
+            color: 'black'
+          },
+          'Speculative execution': {
+            result: 'F',
+            color: 'black'
+          },
+          'Branch prediction': {
+            result: 'T',
+            color: 'black'
+          },
+        },
+      },
   }
