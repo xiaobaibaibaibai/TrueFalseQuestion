@@ -760,4 +760,46 @@ var mid2MultiQuestion = {
           },
         },
       },
+      q38:{
+        description : 'Which of the following statements is false?',
+        choices: {
+          'In VLIW, one clock cycle can do different operations': {
+            result: 'F',
+            color: 'black'
+          },
+          'Dynamic scheduling implies out-of-order execution.': {
+            result: 'F',
+            color: 'black'
+          },
+          'Software-based scheduling has the advantage of viewing the entire program, and can be more sophisticated.': {
+            result: 'T',
+            color: 'black'
+          },
+          'SIMD extension can handle sparse data by scatter and gather.':{
+            result: 'F',
+            color: 'black'
+          }
+        },
+      },
+      q39:{
+        description : 'Threads being blocked altogether and being executed in sets of 32 threads, is called a:',
+        choices: {
+          '32 Thread': {
+            result: 'F',
+            color: 'black'
+          },
+          '32 Block': {
+            result: 'F',
+            color: 'black'
+          },
+          'Unit block': {
+            result: 'F',
+            color: 'black'
+          },
+          'Thread Block':{
+            result: 'T',
+            color: 'black'
+          }
+        },
+      },
   }

@@ -173,4 +173,22 @@ var mid2TFQuestion = {
       answer: 'unknown',
       activeColor: 'black',
     },
+    q30:{
+      description : 'Loops with only intra-iteration dependencies can be executed in parallel.',
+      result: 'T',
+      answer: 'unknown',
+      activeColor: 'black',
+    },
+    q31:{
+      description : 'Hazard detection is done at runtime in VLIM processors.',
+      result: 'F',
+      answer: 'unknown',
+      activeColor: 'black',
+    },
+    q32:{
+      description : 'Simultaneous multithreading is possible only in superscalar processors.',
+      result: 'T',
+      answer: 'unknown',
+      activeColor: 'black',
+    },
 }
